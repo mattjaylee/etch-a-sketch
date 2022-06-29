@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 97vmin;
+    width: 97vmin;  
+    align-items: stretch;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+    align-items: stretch;
+}
+
+.grid-box {
+    border: 1px solid black;
+    flex: auto;
+}
+
+.mouseover {
+    background-color: black;
+}
