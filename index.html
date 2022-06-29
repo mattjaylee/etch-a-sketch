@@ -15,7 +15,6 @@
 
             sizeButton.addEventListener('click', function(event) {
                 let userSize = getSize();
-                createGrid(userSize);
             })
 
             function createGrid(size = 16) {
@@ -35,9 +34,13 @@
             function getSize() {
                 let newSize = parseInt(prompt('Please enter grid size under 100', '16'));
                 if (isNaN(newSize) || newSize > 100) {
-                    getSize();
+                    alert('Please try a valid entry under 100')
                 }
                 else return newSize;
+            }
+
+            function eraseGrid() {
+
             }
 
             createGrid();
