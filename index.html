@@ -6,11 +6,17 @@
         <title>Etch-a-Sketch</title>
     </head>
     <body>
-
+        <button type="button">Set size</button>
         <div class="main-container"></div>
         <script>
 
             const mainContainer = document.querySelector('.main-container');
+            const sizeButton = document.querySelector('button');
+
+            sizeButton.addEventListener('click', function(event) {
+                let userSize = getSize();
+                createGrid(userSize);
+            })
 
             function createGrid(size = 16) {
                 for (let i = 0; i < size; i++) {
@@ -25,6 +31,15 @@
                     mainContainer.appendChild(gridColumn);
                 }
             }
+
+            function getSize() {
+                let newSize = parseInt(prompt('Please enter grid size under 100', '16'));
+                if (isNaN(newSize) || newSize > 100) {
+                    getSize();
+                }
+                else return newSize;
+            }
+
             createGrid();
         </script>
     </body>
